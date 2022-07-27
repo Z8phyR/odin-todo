@@ -1,8 +1,11 @@
+import addProject from "./addproject";
+
 
 export default function init() {
     console.log("Initalize Page");
     createHeader();
     createSide();
+    createMain();
 
 function createHeader() {
     const header = document.createElement('header');
@@ -18,6 +21,9 @@ function createHeader() {
     document.body.appendChild(header);
     //Add Project Button
     button.textContent = "Add Project";
+    button.id = "add-project";
+    button.addEventListener('click',addProject);
+
     div.classList.add('buttons');
     div.appendChild(button);
     header.appendChild(div);
@@ -61,4 +67,10 @@ function createSide()  {
     div.appendChild(h2);
 }
 
+function createMain() {
+    const div = document.createElement('div');
+    div.classList.add('main');
+    document.body.appendChild(div);
+
+}
 }
