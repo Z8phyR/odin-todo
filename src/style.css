@@ -1,118 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;700&display=swap");
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-
-}
-body {
-    background-color: lightblue;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
+.flex-container {
+  display: flex;
+}
+section {
+  background-color: aliceblue;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 500px;
+  background-color: rgb(15, 19, 39);
+  color: white;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project-info {
+  border: 3px solid whitesmoke;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  padding: 20px;
+  color: whitesmoke;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.project-info:hover {
+  background-color: rgb(29, 38, 87);
+}
+
+.icon-div {
+  display: flex;
+  cursor: pointer;
+  align-items: flex-end;
+}
+
+.project-tab:hover {
+  transform: scale(1.1, 1.1);
+}
+#add-project {
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#add-project:hover {
+  transform: scale(1.1, 1.1);
+}
+#add-project:active {
+  background-color: antiquewhite;
+  color: black;
+}
 header {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 2px solid blue;
-    padding: 10px;
-    gap: 10px;
-    /* width: 80vw; */
-    height: 180px;
-    background-color: yellow;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: rgb(10, 12, 24);
+  color: whitesmoke;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid white;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+header ul {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
 }
 
-.profile button {
-    font-size: 1rem;
-    border: 2px solid blue;
+.tasks {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+  flex-direction: column;
 }
 
-header button {
-    font-size: 1.5rem;
-    border: 3px solid green;
-    background-color: transparent;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-
-}
-h1 {
-    color: blue;
-    font-size: 3rem;
-}
-
-#sidebar {
-    display: flex;
-    justify-content: center;
-    border-left: 3px solid black;
-    /* align-items: center; */
-    
+.new-project-tab {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 250px;
+  height: 200px;
+  background-color: azure;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: black 10px 10px 5px;
+  gap: 10px;
+  transition: 0.2s ease-in-out;
 }
 
-#sidebar h2 {
-    border-bottom: 2px solid black;
-    padding: 10px;
-    height: 45px;
-
+.new-project-tab button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 10px;
+  transition: 0.2s;
 }
 
-.popup-form {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    text-align: center;
-    background-color: grey;
-    left: 38%;
-    top: 25%;
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    padding: 20px;
-    gap: 10px;
-    border: 3px solid black;
-    box-shadow: black 5px 10px 5px;
+.new-project-tab button:hover {
+  transform: scale(1.1, 1.1);
 }
 
-.popup-form button {
-    width: 60px;
-    text-align: center;
+.new-project-tab button:active {
+  background-color: black;
+  color: aliceblue;
 }
 
-.main {
-    background-color: aquamarine;
-    width: 79vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+.task-input-div {
+  background-color: rgb(10, 12, 24);
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  color: white;
+  border-radius: 10px;
 }
 
-.project-div {
-    background-color: blueviolet;
-    border: 3px solid black;
-    padding: 20px;
-    transition: 0.3s;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-between;
-    
+.task-listing {
+  display: flex;
+  font-size: 1.4rem;
 }
 
-.btn-project button {
-    padding: 10px;
-    margin: 10px;
+.single-task {
+  font-size: 1.3rem;
+}
+
+.task-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-lists input {
+  text-decoration: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: initial;
+  background-color: transparent;
+}
+
+span {
+  display: inline;
+  transition: 0.2s;
+}
+
+span:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+span:active {
+  color: lightgreen;
 }
